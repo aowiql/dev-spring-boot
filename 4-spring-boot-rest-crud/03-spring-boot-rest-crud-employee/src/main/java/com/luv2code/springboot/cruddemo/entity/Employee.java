@@ -22,6 +22,11 @@ public class Employee {
     private String email;
 
     // constructor
+
+    public Employee() {
+
+    }
+
     public Employee(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
