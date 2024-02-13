@@ -19,8 +19,20 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 		return runner -> {
 			System.out.println("Hello World");
-			createInstructor(appDAO);
+//			createInstructor(appDAO);
+
+			findInstructor(appDAO);
 		};
+	}
+
+	private void findInstructor(AppDAO appDAO) {
+		int theId = 1;
+		System.out.println("Finding instructor id: " + theId);
+
+		Instructor tempInstructor = appDAO.findInstructorById(theId);
+
+		System.out.println("tempInstructor: " + tempInstructor);
+		System.out.println("the associate instructorDetail only: " + tempInstructor.getInstructorDetail());
 	}
 
 	private void createInstructor(AppDAO appDAO) {
